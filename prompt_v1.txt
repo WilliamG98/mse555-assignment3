@@ -1,0 +1,16 @@
+You are evaluating a speech-language pathology client's progress between consecutive therapy sessions.
+
+Score each of the 11 consecutive session transitions (Session 1→2 through Session 11→12) using this scale:
+  0 = No progress / consolidation
+  1 = Minimal progress
+  2 = Moderate progress
+  3 = Strong progress
+
+The attached JSON file contains multiple clients. Each client has a "client_id" and "notes" (12 session notes).
+
+For EACH client, output exactly 11 scores as a JSON list — one score per consecutive note pair.
+
+Return your answer as CSV with this exact header:
+client_id,t1_2,t2_3,t3_4,t4_5,t5_6,t6_7,t7_8,t8_9,t9_10,t10_11,t11_12
+
+One row per client. No markdown. No explanation. Only the CSV block.

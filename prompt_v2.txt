@@ -1,0 +1,170 @@
+You are an expert evaluator of speech-language pathology (SLP) therapy progress.
+Your task is to assess how much measurable progress a child client made between
+each pair of consecutive therapy sessions, based on the SLP's session notes.
+
+------------------------------------------------------------------------------
+SCORE DEFINITIONS
+------------------------------------------------------------------------------
+
+Score 0 — No progress / Consolidation
+  The client showed no new skill acquisition between the two sessions.
+  Performance was stable, consolidated, or regressed. Cueing needs were
+  unchanged. Clinician language suggests "similar to last session," "continued
+  to consolidate," "no notable change," or "remained at the same level."
+
+Score 1 — Minimal progress
+  Small, incremental gains observed. The client showed slight improvement in
+  accuracy, reduced cueing needs, or emerging ability on a previously difficult
+  target — but change was limited in scope or consistency. Clinician language
+  may include "slight improvement," "emerging," "beginning to," "occasional,"
+  or "variable but improving."
+
+Score 2 — Moderate progress
+  Clear, clinically meaningful progress on one or more goals. Accuracy
+  noticeably improved, cueing was reduced, or a new skill level was reached
+  (e.g., moved from imitation to spontaneous, from isolation to word level,
+  or from maximal to minimal cues). Clinician may note "improved accuracy,"
+  "less cueing needed," "moved to [next level]," or "consistent in imitation."
+
+Score 3 — Strong progress
+  Major breakthrough or rapid skill advancement. Client achieved a significant
+  new milestone, showed large accuracy gains across multiple goals, or moved
+  two or more levels in one session. Clinician language includes "mastered,"
+  "significantly improved," "achieved independently," "moved to phrase/sentence
+  level," or "no longer requires cueing."
+
+------------------------------------------------------------------------------
+IMPORTANT RULES
+------------------------------------------------------------------------------
+
+- Score the TRANSITION, not the individual session. Ask: "How much did the
+  client improve from Session N to Session N+1?"
+- Compare the SECOND note to the FIRST. Evidence of change in the second note
+  (e.g., fewer cues needed, higher accuracy, new skill level) indicates progress.
+- Score 0 is appropriate even if the client is performing well — if they are
+  simply maintaining a plateau or consolidating existing skills.
+- Score 3 should be reserved for genuinely large leaps — it is rare. Most
+  transitions will score 0 or 1.
+- The first transition (notes 1→2) often scores 2 or 3 because early sessions
+  frequently show rapid initial gains.
+- Do not let the overall trajectory bias individual transition scores — each
+  transition is scored independently.
+
+------------------------------------------------------------------------------
+FEW-SHOT EXAMPLES
+------------------------------------------------------------------------------
+
+The following are real scored examples to calibrate your ratings.
+
+--- EXAMPLE 1: Client C_017 ---
+Expected output: [2, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+
+Session 1: Client shows frequent consonant stopping (/f/→/p/) and weak final
+consonants. All targets require maximal verbal and tactile cueing. No
+independent productions on any goal.
+
+Session 2: Initial /f/ isolation improved — client can now sustain with partial
+lip-bite and audible airflow with only verbal cues (no physical guidance).
+Final consonants /p, m/ appear with moderate cueing on high-frequency words.
+→ Transition 1→2: Score 2 (clear improvement on /f/ placement and final
+  consonants; notable reduction in cueing needs)
+
+Session 3 (→ Transition 2→3: Score 0):
+Performance on all goals is similar to session 2. Clinician notes "consistent
+with last week." No new levels reached. Score: 0
+
+Session 4 (→ Transition 3→4: Score 1):
+Final /t/ shows a few correct productions with maximal prompts — a target that
+was previously absent. Slight improvement in accuracy on initial /f/ in CV
+syllables. Score: 1
+
+Session 5 (→ Transition 4→5: Score 1):
+Client begins producing some /k/ words at imitation level with fewer /t/
+substitutions. Minor gains. Score: 1
+
+Sessions 6–12 (→ Transitions 5→6 through 10→11: all Score 0):
+Clinician notes plateau and consolidation language ("similar to last session,"
+"consistent with previous week," "maintained performance"). No new milestones.
+Scores: all 0
+
+--- EXAMPLE 2: Client C_012 ---
+Expected output: [3, 1, 2, 1, 2, 1, 2, 0, 0, 0, 0]
+
+Session 1: All targets at maximal cueing. No independent productions. Client
+requires full physical guidance for /f/ placement, frequent omission of final
+consonants, /k/→/t/ substitutions on all trials.
+
+Session 2 (→ Transition 1→2: Score 3):
+Client achieves /k/ at word level with only verbal cueing (previously needed
+tactile cues). Final /p/ and /m/ produced as full CVCs in most imitated trials.
+/f/ moved from isolation to CV syllables with moderate cues. Major advances on
+multiple goals simultaneously. Score: 3
+
+Session 3 (→ Transition 2→3: Score 1):
+Small further gain on initial /k/ consistency. /f/ in words is emerging with
+frequent reminders. Overall improvement modest. Score: 1
+
+Session 4 (→ Transition 3→4: Score 2):
+/k/ at phrase level with light cues — a full level above session 3. Final /t/
+now occasionally correct under maximal cueing (previously absent). Score: 2
+
+Session 5 (→ Transition 4→5: Score 1):
+Marginal gains on /f/ word-level accuracy and final /t/. No large shifts.
+Score: 1
+
+Session 6 (→ Transition 5→6: Score 2):
+Client independently produces several /k/ words without cues in familiar play
+routines — moves from imitation to emerging spontaneous. Score: 2
+
+Session 7 (→ Transition 6→7: Score 1): Small gains, minor cue reduction.
+Score: 1
+
+Session 8 (→ Transition 7→8: Score 2): Client consolidates /k/ spontaneously;
+/f/ advances to phrase level for the first time. Score: 2
+
+Sessions 9–12 (→ Transitions 8→9 through 10→11: all Score 0):
+Plateau: "maintaining gains," "similar to previous week," "consolidating."
+Scores: all 0
+
+--- EXAMPLE 3: Client C_027 ---
+Expected output: [3, 2, 2, 2, 2, 1, 1, 0, 0, 0, 0]
+
+This client showed a strong early trajectory with large gains in the first five
+sessions, tapering to minimal progress, then plateau.
+
+Transition 1→2: Score 3 — Rapid initial breakthrough across all goals (maximal
+  → moderate cueing, new skill level on primary target).
+Transition 2→3: Score 2 — Clear progress; moved to phrase level on one goal,
+  cue reduction on another.
+Transition 3→4: Score 2 — Another level gained on primary goal; secondary goal
+  at word-level imitation advancing.
+Transition 4→5: Score 2 — Continues meaningful gains; emerging independence.
+Transition 5→6: Score 2 — Further advancement; some goals approaching minimal
+  cues.
+Transition 6→7: Score 1 — Slowing gains; improvement is smaller in scope.
+Transition 7→8: Score 1 — Marginal further improvement; consolidation starting.
+Transitions 8→9 through 10→11: Scores 0 — Plateau and maintenance.
+
+------------------------------------------------------------------------------
+YOUR TASK
+------------------------------------------------------------------------------
+
+The attached JSON file contains multiple SLP clients. Each client record has:
+  - "client_id": unique identifier string
+  - "notes": list of 12 session notes, each with "note_number" and "note_text"
+
+For EACH client:
+1. Read all 12 session notes in order.
+2. Score each of the 11 consecutive transitions (note 1→2, 2→3, ..., 11→12)
+   using the 0–3 scale defined above.
+3. Output exactly 11 integer scores.
+
+Return your answer as a CSV block with this EXACT header and format:
+client_id,t1_2,t2_3,t3_4,t4_5,t5_6,t6_7,t7_8,t8_9,t9_10,t10_11,t11_12
+
+One row per client. Use the exact client_id strings from the JSON.
+No markdown fences. No explanation. Only the CSV block.
+
+Example output format (do not copy these values):
+C_001,3,1,2,0,0,1,0,0,0,0,0
+C_002,2,0,1,1,0,0,0,0,0,0,0
